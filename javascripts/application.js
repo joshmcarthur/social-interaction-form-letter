@@ -23,7 +23,7 @@ if (queryString) {
   }
 
   if (query.reason) {
-    document.querySelector('input[name=reason][value="' + query.reason + '"]').checked = true
+    document.querySelector('input[name=reason][value="' + query.reason + '"]').checked = true;
   }
 
 }
