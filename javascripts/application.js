@@ -27,6 +27,10 @@ if (queryString) {
     document.querySelector('input[name=reason][value="' + query.reason + '"]').checked = true;
   }
 
+  if (query.time_of_day) {
+    document.querySelector('input[name=time_of_day][value="' + query.time_of_day + '"]').checked = true;
+  }
+
 }
 
 var saveInputValue = function(evt) {
