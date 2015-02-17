@@ -20,6 +20,7 @@ if (queryString) {
 
   if (query.other_reason) {
     document.querySelector('input[name=other_reason]').value = decodeURIComponent(query.other_reason);
+    document.querySelector('input[name=other_reason]').disabled = false;
   }
 
   if (query.reason) {
