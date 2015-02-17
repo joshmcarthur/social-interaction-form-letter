@@ -71,7 +71,7 @@ document.querySelector('#generate-short-url').addEventListener('click', function
 
   gapi.client.load('urlshortener', 'v1', function() {
     var request = gapi.client.urlshortener.url.insert({
-      'resource': { 'longUrl': encodeURI(window.location.toString()) }
+      'resource': { 'longUrl': window.location.toString() }
     });
 
     var response = request.execute(function(resp) {
