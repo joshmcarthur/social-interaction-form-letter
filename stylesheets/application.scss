@@ -1,0 +1,55 @@
+---
+---
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700|Open+Sans:400italic,400,700);
+
+$black: #222;
+
+
+body {
+  font-size: 18px;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: $black;
+}
+
+.container {
+  @include outer-container;
+}
+
+.site-header, .site-content, .site-footer {
+  @include span-columns(12);
+}
+
+label {
+  display: block;
+}
+
+.site-header {
+  h1.site-title {
+    font-size: 3em;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+
+input[type=text] {
+  -webkit-appearance: none;
+  box-shadow: none;
+  display: inline-block;
+  width: auto;
+  border: none;
+  border-radius: 0;
+  border-bottom: dotted 2px $black;
+
+  &:focus {
+    border-bottom: solid 2px $black;
+    box-shadow: none;
+  }
+}
+
+

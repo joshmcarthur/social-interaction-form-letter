@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="Generate a form letter to send to someone you just do not want to interact with">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Social Interaction Form Letter">
+
+        <link rel="stylesheet" href="stylesheets/application.css">
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+        <div class="container">
+          <div class="site-content">
+            <form>
+            <p>
+              Dear <input type="text" name="user_name" autofocus>
+            </p>
+
+            <p>
+              Thank you for your considering in engaging me in your social interaction. Unfortunately, I:
+            </p>
+
+            <div class="radio-group">
+              <label>
+                <input name="reason" value="topic" type="radio">
+                Don't care for this topic
+              </label>
+
+              <label>
+                <input name="reason" value="no_name" type="radio">
+                Can't remember your name and know I will need to for the purposes of this interaction
+              </label>
+              <label>
+                <input name="reason" value="more_snacks" type="radio">
+                Just saw some new snacks be put out
+              </label>
+
+              <label>
+                <input name="reason" value="group_size" type="radio">
+                Am anxious about the size of this group
+              </label>
+
+              <label>
+                <input name="reason" value="cannot_hear" type="radio">
+                Can't hear a damn word you're saying
+              </label>
+
+              <label>
+                <input name="reason" value="pet" type="radio">
+                Would prefer to interact with that pet over there
+              </label>
+
+              <label>
+                <input name="reason" value="accident" type="radio">
+                "What? An accident?! I'll be there right away!"
+              </label>
+
+              <label>
+                <input name="reason" value="other" type="radio">
+                Other:
+                <input name="other_reason" type="text">
+              </label>
+            </div>
+
+            <p>
+              Have a pleasant (dawn/morning/afternoon/evening/night)!
+            </p>
+          </form>
+          </div>
+
+          <footer class="site-footer"></footer>
+        </div>
+
+        <script src="javascripts/application.js"></script>
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
