@@ -51,9 +51,11 @@ var saveInputValue = function(evt) {
 
     if (target.value != "other") {
       document.querySelector('input[name=other_reason]').value = '';
+      document.querySelector('input[name=other_reason]').disabled = true;
       query.other_reason = null;
       saveQueryToHash();
     } else {
+      document.querySelector('input[name=other_reason]').disabled = false;
       document.querySelector('input[name=other_reason]').focus();
     }
   });
