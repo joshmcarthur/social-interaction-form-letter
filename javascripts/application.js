@@ -39,12 +39,15 @@ var saveInputValue = function(evt) {
   this.addEventListener('input', saveInputValue);
 });
 
-[].forEach.call(document.querySelectorAll('input[type=radio]'), function() {
+[].forEach.call(document.querySelectorAll('input[name=reason]'), function() {
   this.addEventListener('change', function(evt) {
     var target = evt.target;
+    if (! (target.checked)) return;
 
     if (target.value != "other") {
       document.querySelector('input[name=other_reason]').value = '';
+      query.other_reason = null;
+      saveQueryToHash();
     } else {
       document.querySelector('input[name=other_reason]').focus();
     }
