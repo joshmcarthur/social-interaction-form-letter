@@ -44,6 +44,7 @@ var saveInputValue = function(evt) {
   this.addEventListener('input', saveInputValue);
 });
 
+
 [].forEach.call(document.querySelectorAll('input[name=reason]'), function() {
   this.addEventListener('change', function(evt) {
     var target = evt.target;
@@ -61,4 +62,30 @@ var saveInputValue = function(evt) {
   });
 });
 
+document.querySelector('#generate-short-url').addEventListener('click', function(evt) {
+  var target = evt.target;
+  var holder = document.querySelector("#short-url-holder");
+
+  holder.classList.add('hide');
+  target.disabled = true;
+
+  gapi.client.load('urlshortener', 'v1', function() {
+    var request = gapi.client.urlshortener.url.insert({
+      'resource': { 'longUrl': encodeURI(window.location.toString()) }
+    });
+
+    var response = request.execute(function(resp) {
+      if (resp.error) {
+        console.log("RESPONSE: ", resp);
+        alert("Please try again");
+      } else {
+        holder.classList.remove('hide');
+        holder.value = resp.id;
+        holder.setSelectionRange(0, holder.value.length);
+      }
+
+      target.disabled = false;
+    });
+  });
+});
 
