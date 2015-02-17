@@ -23,6 +23,10 @@ body {
   @include span-columns(12);
 }
 
+.hide {
+  display: none !important;
+}
+
 label {
   display: block;
 }
@@ -34,6 +38,10 @@ label {
     font-weight: bold;
     text-align: center;
   }
+}
+
+.text-muted {
+  color: #999;
 }
 
 
@@ -50,6 +58,11 @@ input[type=text] {
     border-bottom: solid 2px $black;
     box-shadow: none;
   }
+}
+
+input[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 
