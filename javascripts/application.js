@@ -7,12 +7,12 @@ var queryString = window.location.hash.replace(/^#/, '');
 var query = {};
 
 var saveQueryToHash = function() {
-  window.location.hash = encodeURIComponent(JSON.stringify(query));
+  window.location.hash = btoa(JSON.stringify(query));
 };
 
 
 if (queryString) {
-  query = JSON.parse(decodeURIComponent(queryString));
+  query = JSON.parse(atob(queryString));
 
   if (query.user_name) {
     document.querySelector('input[name=user_name]').value = decodeURIComponent(query.user_name);
@@ -62,30 +62,6 @@ var saveInputValue = function(evt) {
   });
 });
 
-document.querySelector('#generate-short-url').addEventListener('click', function(evt) {
-  var target = evt.target;
-  var holder = document.querySelector("#short-url-holder");
-
-  holder.classList.add('hide');
-  target.disabled = true;
-
-  gapi.client.load('urlshortener', 'v1', function() {
-    var request = gapi.client.urlshortener.url.insert({
-      'resource': { 'longUrl': window.location.toString() }
-    });
-
-    var response = request.execute(function(resp) {
-      if (resp.error) {
-        console.log("RESPONSE: ", resp);
-        alert("Please try again");
-      } else {
-        holder.classList.remove('hide');
-        holder.value = resp.id;
-        holder.setSelectionRange(0, holder.value.length);
-      }
-
-      target.disabled = false;
-    });
-  });
-});
+new ClipboardJS('#share', { text: function() { return window.location; } })
+  .on("success", function() { alert("Copied URL to your clipboard!"); });
 

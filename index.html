@@ -12,6 +12,9 @@
         <!-- Add to homescreen for Chrome on Android -->
         <meta name="mobile-web-app-capable" content="yes">
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+
         <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -55,7 +58,7 @@
 
               <label>
                 <input name="reason" value="cannot_hear" type="radio">
-                Can't hear a damn word you're saying
+                Can't hear a word you're saying
               </label>
 
               <label>
@@ -111,8 +114,7 @@
           <footer class="site-footer">
             <hr />
             <button onclick="window.location.hash = ''; window.location.reload();">Make your own form letter</button>
-            <button id="generate-short-url">Share your form letter!</button>
-            <input type="text" id="short-url-holder" class="hide">
+            <button id="share">Share your form letter!</button>
             <p class="text-muted"><small>Don't worry, it looks exactly like this form - it's still just as heartless.</small></p>
           </footer>
         </div>
